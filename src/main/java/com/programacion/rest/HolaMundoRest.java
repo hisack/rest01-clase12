@@ -12,7 +12,7 @@ import java.util.List;
 
 @Path("/cliente")
 public class HolaMundoRest {
-/*
+
     @GET
     @Path("/{nombre}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -22,7 +22,7 @@ public class HolaMundoRest {
         ret.setFecha(new Date());
         return  ret;
     }
-
+/*
     @POST //-- insertar
     @Path("/guardar")
     @Produces(MediaType.APPLICATION_JSON)
@@ -32,6 +32,8 @@ public class HolaMundoRest {
         ret.setMensaje(hola.getMensaje());
         ret.setFecha(hola.getFecha());
         return  ret;
+        return Response.status(Response.Status.CREATED).build();
+
     }
 
     /*hacer un post un put un delete*/
@@ -47,13 +49,12 @@ public class HolaMundoRest {
     }
 
 
-    @POST //-- insertar
+    @POST
     @Path("/insertar")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Cliente guardar(Cliente cliente){
        Cliente clienteNuevo= servicio.agregarCliente(cliente);
-       // return Response.status(Response.Status.CREATED).build();
         return clienteNuevo;
     }
 

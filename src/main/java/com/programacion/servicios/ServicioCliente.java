@@ -24,7 +24,7 @@ public class ServicioCliente {
     }
 
     public Cliente agregarCliente(Cliente cliente){
-            clientes.put(cliente.getCedula(), cliente);//entonces agreguele el elemento al mapa
+            clientes.put(cliente.getCedula(), cliente);
             Cliente cli= clientes.get(cliente.getCedula());
            return cli;
     }
